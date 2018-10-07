@@ -11,6 +11,9 @@ public class PlayerMoveScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		float moveVert = Input.GetAxis("Vertical") * 5f * Time.deltaTime;
+		float moveHorz = Input.GetAxis("Horizontal") * 5f * Time.deltaTime;
+		transform.Translate(moveHorz, 0.0f, moveVert);
+
 	}
 }
