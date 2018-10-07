@@ -266,8 +266,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 15
   rotationSpeed: 50
+  drainRate: 7
   flashlight: {fileID: 1501479548955920}
   flashlightIsActive: 0
+  batteryLife: 100
 --- !u!124 &124537078188143862
 Behaviour:
   m_ObjectHideFlags: 1

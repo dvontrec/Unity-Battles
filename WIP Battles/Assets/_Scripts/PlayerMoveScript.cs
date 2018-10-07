@@ -5,8 +5,11 @@ using UnityEngine;
 public class PlayerMoveScript : MonoBehaviour {
 	public float moveSpeed;
 	public float rotationSpeed;
+	public float drainRate;
 	public GameObject flashlight;
 	public bool flashlightIsActive = false;
+
+	public float batteryLife = 100f;
 	// Use this for initialization
 	void Start () {
 		
@@ -23,14 +26,33 @@ public class PlayerMoveScript : MonoBehaviour {
 			ToggleLight();
 		}
 
+		if(flashlightIsActive)
+		{
+			batteryLife -= drainRate * Time.deltaTime;
+			if(batteryLife <= 0){
+				flashlightIsActive = false;
+				batteryLife = 0;
+				ToggleLight();
+				
+			}
+		}
+
 	}
 
 	void OnTriggerEnter(Collider Other){
 		Destroy(Other.gameObject);
+		batteryLife += 25;
 	}
 
 	void ToggleLight() {
-		flashlight.SetActive(!flashlightIsActive);
-		flashlightIsActive = !flashlightIsActive;
+		if(batteryLife > 0)
+		{
+			flashlight.SetActive(!flashlightIsActive);
+			flashlightIsActive = !flashlightIsActive;
+		}
+		else{
+			flashlight.SetActive(false);
+		}
+		
 	}
 }
