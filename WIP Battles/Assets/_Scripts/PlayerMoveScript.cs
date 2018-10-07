@@ -7,7 +7,7 @@ public class PlayerMoveScript : MonoBehaviour {
 	public float rotationSpeed;
 	public float drainRate;
 	public GameObject flashlight;
-	public bool flashlightIsActive = false;
+	 bool flashlightIsActive = false;
 
 	public float batteryLife = 100f;
 	// Use this for initialization
