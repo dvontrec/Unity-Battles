@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMoveScript : MonoBehaviour {
-	public float moveSpeed;
+    public float moveSpeed;
 	public float rotationSpeed;
 	public float drainRate;
 	public GameObject flashlight;
@@ -22,7 +22,7 @@ public class PlayerMoveScript : MonoBehaviour {
 		transform.Translate(0.0f, 0.0f, moveVert);
 		transform.Rotate(0.0f, moveHorz, 0.0f);
 
-		if(Input.GetKeyDown("space")){
+		if(Input.GetKeyDown("f")){
 			ToggleLight();
 		}
 
