@@ -16,4 +16,8 @@ public class PlayerMoveScript : MonoBehaviour {
 		transform.Translate(moveHorz, 0.0f, moveVert);
 
 	}
+
+	void OnTriggerEnter(Collider Other){
+		Destroy(Other.gameObject);
+	}
 }
